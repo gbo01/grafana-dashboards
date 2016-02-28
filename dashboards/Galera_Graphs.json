@@ -894,7 +894,7 @@
         ]
     }, 
     "time": {
-        "from": "now-12h", 
+        "from": "now-2h", 
         "to": "now"
     }, 
     "timepicker": {
@@ -930,5 +930,6 @@
     }, 
     "timezone": "browser", 
     "title": "Galera Graphs", 
-    "version": 0
+    "refresh": "30s",
+"version": 0
 }

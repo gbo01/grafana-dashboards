@@ -652,7 +652,7 @@
         ]
     }, 
     "time": {
-        "from": "now-12h", 
+        "from": "now-2h", 
         "to": "now"
     }, 
     "timepicker": {
@@ -688,5 +688,6 @@
     }, 
     "timezone": "browser", 
     "title": "MySQL Table Statistics", 
-    "version": 3
+    "refresh": "30s",
+"version": 3
 }

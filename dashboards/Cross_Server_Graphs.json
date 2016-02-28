@@ -639,12 +639,12 @@
     "schemaVersion": 8, 
     "sharedCrosshair": false, 
     "style": "dark", 
-    "tags": [], 
+    "tags": ["Percona", "OS", "MySQL"], 
     "templating": {
         "list": []
     }, 
     "time": {
-        "from": "now-12h", 
+        "from": "now-2h", 
         "to": "now"
     }, 
     "timepicker": {
@@ -680,5 +680,6 @@
     }, 
     "timezone": "browser", 
     "title": "Cross Server Graphs", 
-    "version": 3
+    "refresh": "30s",
+"version": 3
 }

@@ -1429,6 +1429,7 @@
     "list": []
   },
   "schemaVersion": 8,
-  "version": 20,
+  "refresh": "30s",
+"version": 20,
   "links": []
 }

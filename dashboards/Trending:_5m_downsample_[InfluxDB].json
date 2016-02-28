@@ -2400,7 +2400,7 @@
         ]
     }, 
     "time": {
-        "from": "now-12h", 
+        "from": "now-2h", 
         "to": "now"
     }, 
     "timepicker": {
@@ -2436,5 +2436,6 @@
     }, 
     "timezone": "browser", 
     "title": "Trending: 5m downsample [InfluxDB]", 
-    "version": 7
+    "refresh": "30s",
+"version": 7
 }

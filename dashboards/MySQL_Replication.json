@@ -830,7 +830,7 @@
     "schemaVersion": 8, 
     "sharedCrosshair": false, 
     "style": "dark", 
-    "tags": [], 
+    "tags": ["percona", "MySQL"], 
     "templating": {
         "list": [
             {
@@ -866,7 +866,7 @@
         ]
     }, 
     "time": {
-        "from": "now-12h", 
+        "from": "now-2h", 
         "to": "now"
     }, 
     "timepicker": {
@@ -902,5 +902,6 @@
     }, 
     "timezone": "browser", 
     "title": "MySQL Replication", 
-    "version": 0
+    "refresh": "30s",
+"version": 0
 }

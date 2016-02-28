@@ -1833,7 +1833,7 @@
         ]
     }, 
     "time": {
-        "from": "now-12h", 
+        "from": "now-2h", 
         "to": "now"
     }, 
     "timepicker": {
@@ -1864,5 +1864,6 @@
     }, 
     "timezone": "browser", 
     "title": "TokuDB Metrics", 
-    "version": 1
+    "refresh": "30s",
+"version": 1
 }

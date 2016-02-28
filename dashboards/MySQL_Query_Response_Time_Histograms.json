@@ -418,7 +418,7 @@
         ]
     }, 
     "time": {
-        "from": "now-12h", 
+        "from": "now-2h", 
         "to": "now"
     }, 
     "timepicker": {
@@ -454,5 +454,6 @@
     }, 
     "timezone": "browser", 
     "title": "MySQL Query Response Time Histograms", 
-    "version": 10
+    "refresh": "30s",
+"version": 10
 }

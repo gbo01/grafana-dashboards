@@ -787,7 +787,7 @@
     "schemaVersion": 8, 
     "sharedCrosshair": false, 
     "style": "dark", 
-    "tags": [], 
+    "tags": ["Percona", "OS"], 
     "templating": {
         "list": [
             {
@@ -831,7 +831,7 @@
         ]
     }, 
     "time": {
-        "from": "now-12h", 
+        "from": "now-2h", 
         "to": "now"
     }, 
     "timepicker": {
@@ -867,5 +867,6 @@
     }, 
     "timezone": "browser", 
     "title": "Disk Performance", 
-    "version": 5
+    "refresh": "30s",
+"version": 5
 }
