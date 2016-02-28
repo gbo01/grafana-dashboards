@@ -60,7 +60,7 @@
                             "calculatedInterval": "2m", 
                             "datasourceErrors": {}, 
                             "errors": {}, 
-                            "expr": "rate(mysql_global_status_connections[$smooth])", 
+                            "expr": "rate(mysql_global_status_connections{alias=~\"$host\"}[$smooth])", 
                             "interval": "5m", 
                             "intervalFactor": 1, 
                             "legendFormat": "{{ alias }}", 
@@ -690,7 +690,46 @@
         "query": "10s, 30s, 1m, 5m, 15m, 1h",
         "refresh": false,
         "type": "custom"
+      },
+      {
+        "allFormat": "glob", 
+        "current": {
+            "text": "cdba", 
+            "value": "cdba"
+        }, 
+        "datasource": null, 
+        "includeAll": true, 
+        "label": "host", 
+        "multi": true, 
+        "multiFormat": "pipe", 
+        "name": "Hosts", 
+        "options": [
+            {
+                "selected": true, 
+                "text": "cdba", 
+                "value": "cdba"
+            }, 
+            {
+                "selected": false, 
+                "text": "cdba2", 
+                "value": "cdba2"
+            }, 
+            {
+                "selected": false, 
+                "text": "edison", 
+                "value": "edison"
+            }
+        ], 
+        "query": "label_values(alias)", 
+        "refresh": true, 
+        "refresh_on_load": false, 
+        "regex": "", 
+        "tagValuesQuery": "alias", 
+        "tagsQuery": "up", 
+        "type": "query", 
+        "useTags": false
       }
+
     ]
   },
     "time": {
