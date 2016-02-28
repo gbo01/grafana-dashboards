@@ -137,7 +137,7 @@
                             "calculatedInterval": "2m", 
                             "datasourceErrors": {}, 
                             "errors": {}, 
-                            "expr": "rate(mysql_global_status_queries[$smooth])", 
+                            "expr": "rate(mysql_global_status_queries{alias=~\"$host\"}[$smooth])", 
                             "interval": "5m", 
                             "intervalFactor": 1, 
                             "legendFormat": "{{ alias }}", 
@@ -214,7 +214,7 @@
                             "calculatedInterval": "10s", 
                             "datasourceErrors": {}, 
                             "errors": {}, 
-                            "expr": "node_load1", 
+                            "expr": "node_load1{alias=~\"$host\"}", 
                             "interval": "5m", 
                             "intervalFactor": 1, 
                             "legendFormat": "{{ alias }}", 
@@ -227,7 +227,7 @@
                     ], 
                     "timeFrom": null, 
                     "timeShift": null, 
-                    "title": "Load Average", 
+                    "title": "Load Average - 1 min", 
                     "tooltip": {
                         "shared": true, 
                         "value_type": "individual"
@@ -293,7 +293,7 @@
                             "calculatedInterval": "10s", 
                             "datasourceErrors": {}, 
                             "errors": {}, 
-                            "expr": "(node_memory_MemTotal - (node_memory_MemFree + node_memory_Buffers + node_memory_Cached)) / node_memory_MemTotal * 100", 
+                            "expr": "(node_memory_MemTotal - (node_memory_MemFree + node_memory_Buffers + node_memory_Cached)) / on(alias) node_memory_MemTotal{alias=~\"$host\"} *100 ", 
                             "interval": "5m", 
                             "intervalFactor": 1, 
                             "legendFormat": "{{ alias }}", 
@@ -699,10 +699,10 @@
         }, 
         "datasource": null, 
         "includeAll": true, 
-        "label": "host", 
+        "label": "Hosts", 
         "multi": true, 
         "multiFormat": "pipe", 
-        "name": "Hosts", 
+        "name": "host", 
         "options": [
             {
                 "selected": true, 
