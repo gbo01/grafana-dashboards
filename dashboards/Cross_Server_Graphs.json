@@ -60,7 +60,7 @@
                             "calculatedInterval": "2m", 
                             "datasourceErrors": {}, 
                             "errors": {}, 
-                            "expr": "rate(mysql_global_status_connections[5m])", 
+                            "expr": "rate(mysql_global_status_connections[$smooth])", 
                             "interval": "5m", 
                             "intervalFactor": 1, 
                             "legendFormat": "{{ alias }}", 
@@ -137,7 +137,7 @@
                             "calculatedInterval": "2m", 
                             "datasourceErrors": {}, 
                             "errors": {}, 
-                            "expr": "rate(mysql_global_status_queries[5m])", 
+                            "expr": "rate(mysql_global_status_queries[$smooth])", 
                             "interval": "5m", 
                             "intervalFactor": 1, 
                             "legendFormat": "{{ alias }}", 
@@ -530,7 +530,7 @@
                             "calculatedInterval": "2s", 
                             "datasourceErrors": {}, 
                             "errors": {}, 
-                            "expr": "sum(rate(node_network_receive_bytes{device!=\"lo\"}[5m]) + rate(node_network_transmit_bytes{device!=\"lo\"}[5m])) by (alias)", 
+                            "expr": "sum(rate(node_network_receive_bytes{device!=\"lo\"}[$smooth]) + rate(node_network_transmit_bytes{device!=\"lo\"}[$smooth])) by (alias)", 
                             "interval": "", 
                             "intervalFactor": 2, 
                             "legendFormat": "{{ alias }}", 
@@ -606,7 +606,7 @@
                             "calculatedInterval": "2m", 
                             "datasourceErrors": {}, 
                             "errors": {}, 
-                            "expr": "rate(mysql_global_status_bytes_received[5m]) + rate(mysql_global_status_bytes_sent[5m])", 
+                            "expr": "rate(mysql_global_status_bytes_received[$smooth]) + rate(mysql_global_status_bytes_sent[$smooth])", 
                             "interval": "", 
                             "intervalFactor": 2, 
                             "legendFormat": "{{ alias }}", 
@@ -640,9 +640,59 @@
     "sharedCrosshair": false, 
     "style": "dark", 
     "tags": ["Percona", "OS", "MySQL"], 
-    "templating": {
-        "list": []
-    }, 
+  "templating": {
+    "list": [
+      {
+        "allFormat": "glob",
+        "current": {
+          "tags": [],
+          "text": "1m",
+          "value": "1m"
+        },
+        "datasource": null,
+        "includeAll": false,
+        "multi": false,
+        "multiFormat": "glob",
+        "name": "smooth",
+        "options": [
+          {
+            "selected": false,
+            "text": "10s",
+            "value": "10s"
+          },
+          {
+            "selected": false,
+            "text": "30s",
+            "value": "30s"
+          },
+          {
+            "selected": true,
+            "text": "1m",
+            "value": "1m"
+          },
+          {
+            "selected": false,
+            "text": "5m",
+            "value": "5m"
+          },
+          {
+            "selected": false,
+            "text": "15m",
+            "value": "15m"
+          },
+          {
+            "selected": false,
+            "text": "1h",
+            "value": "1h"
+          }
+
+        ],
+        "query": "10s, 30s, 1m, 5m, 15m, 1h",
+        "refresh": false,
+        "type": "custom"
+      }
+    ]
+  },
     "time": {
         "from": "now-2h", 
         "to": "now"
