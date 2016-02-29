@@ -182,7 +182,7 @@
                             "calculatedInterval": "2m", 
                             "datasourceErrors": {}, 
                             "errors": {}, 
-                            "expr": "rate(node_disk_reads_completed{alias=\"$host\"}[5m])", 
+                            "expr": "rate(node_disk_reads_completed{alias=\"$host\"}[$smooth])", 
                             "interval": "", 
                             "intervalFactor": 2, 
                             "legendFormat": "Read: {{ device }}", 
@@ -196,7 +196,7 @@
                             "calculatedInterval": "2m", 
                             "datasourceErrors": {}, 
                             "errors": {}, 
-                            "expr": "rate(node_disk_writes_completed{alias=\"$host\"}[5m])", 
+                            "expr": "rate(node_disk_writes_completed{alias=\"$host\"}[$smooth])", 
                             "interval": "", 
                             "intervalFactor": 2, 
                             "legendFormat": "Write: {{ device }}", 
@@ -277,7 +277,7 @@
                             "calculatedInterval": "2m", 
                             "datasourceErrors": {}, 
                             "errors": {}, 
-                            "expr": "rate(node_disk_io_time_ms{alias=\"$host\"}[5m])/1000", 
+                            "expr": "rate(node_disk_io_time_ms{alias=\"$host\"}[$smooth])/1000", 
                             "interval": "", 
                             "intervalFactor": 2, 
                             "legendFormat": "Utilization: {{ device }}", 
@@ -358,7 +358,7 @@
                             "calculatedInterval": "2m", 
                             "datasourceErrors": {}, 
                             "errors": {}, 
-                            "expr": "1 + rate(node_disk_reads_merged{alias=\"$host\"}[5m]) / rate(node_disk_reads_completed{alias=\"$host\"}[5m])", 
+                            "expr": "1 + rate(node_disk_reads_merged{alias=\"$host\"}[$smooth]) / on(alias, device) rate(node_disk_reads_completed[$smooth])", 
                             "interval": "", 
                             "intervalFactor": 2, 
                             "legendFormat": "Read Ratio: {{ device }}", 
@@ -372,7 +372,7 @@
                             "calculatedInterval": "2m", 
                             "datasourceErrors": {}, 
                             "errors": {}, 
-                            "expr": "1 + rate(node_disk_writes_merged{alias=\"$host\"}[5m]) / rate(node_disk_writes_completed{alias=\"$host\"}[5m])", 
+                            "expr": "1 + rate(node_disk_writes_merged{alias=\"$host\"}[$smooth]) / on(alias, device) rate(node_disk_writes_completed[$smooth])", 
                             "interval": "", 
                             "intervalFactor": 2, 
                             "legendFormat": "Write Ratio: {{ device }}", 
@@ -453,7 +453,7 @@
                             "calculatedInterval": "2m", 
                             "datasourceErrors": {}, 
                             "errors": {}, 
-                            "expr": "rate(node_disk_bytes_read{alias=\"$host\"}[5m])", 
+                            "expr": "rate(node_disk_bytes_read{alias=\"$host\"}[$smooth])", 
                             "interval": "", 
                             "intervalFactor": 2, 
                             "legendFormat": "Read: {{ device }}", 
@@ -467,7 +467,7 @@
                             "calculatedInterval": "2m", 
                             "datasourceErrors": {}, 
                             "errors": {}, 
-                            "expr": "rate(node_disk_bytes_written{alias=\"$host\"}[5m])", 
+                            "expr": "rate(node_disk_bytes_written{alias=\"$host\"}[$smooth])", 
                             "interval": "", 
                             "intervalFactor": 2, 
                             "legendFormat": "Write: {{ device }}", 
@@ -548,7 +548,7 @@
                             "calculatedInterval": "2m", 
                             "datasourceErrors": {}, 
                             "errors": {}, 
-                            "expr": "rate(node_disk_read_time_ms{alias=\"$host\"}[5m]) /rate(node_disk_reads_completed{alias=\"$host\"}[5m])", 
+                            "expr": "rate(node_disk_read_time_ms{alias=\"$host\"}[$smooth]) / on(alias, device) rate(node_disk_reads_completed[$smooth])", 
                             "interval": "", 
                             "intervalFactor": 2, 
                             "legendFormat": "Read: {{ device }}", 
@@ -562,7 +562,7 @@
                             "calculatedInterval": "2m", 
                             "datasourceErrors": {}, 
                             "errors": {}, 
-                            "expr": "rate(node_disk_write_time_ms{alias=\"$host\"}[5m]) / rate(node_disk_writes_completed{alias=\"$host\"}[5m])", 
+                            "expr": "rate(node_disk_write_time_ms{alias=\"$host\"}[$smooth]) / on(alias, device) rate(node_disk_writes_completed[$smooth])", 
                             "interval": "", 
                             "intervalFactor": 2, 
                             "legendFormat": "Write: {{ device }}", 
@@ -643,7 +643,7 @@
                             "calculatedInterval": "2m", 
                             "datasourceErrors": {}, 
                             "errors": {}, 
-                            "expr": "rate(node_disk_read_time_ms{alias=\"$host\"}[5m])", 
+                            "expr": "rate(node_disk_read_time_ms{alias=\"$host\"}[$smooth])", 
                             "interval": "", 
                             "intervalFactor": 2, 
                             "legendFormat": "Reading: {{ device }}", 
@@ -657,7 +657,7 @@
                             "calculatedInterval": "2m", 
                             "datasourceErrors": {}, 
                             "errors": {}, 
-                            "expr": "rate(node_disk_write_time_ms{alias=\"$host\"}[5m])", 
+                            "expr": "rate(node_disk_write_time_ms{alias=\"$host\"}[$smooth])", 
                             "interval": "", 
                             "intervalFactor": 2, 
                             "legendFormat": "Writing: {{ device }}", 
@@ -738,7 +738,7 @@
                             "calculatedInterval": "2m", 
                             "datasourceErrors": {}, 
                             "errors": {}, 
-                            "expr": "rate(node_disk_io_time_ms{alias=\"$host\"}[5m])", 
+                            "expr": "rate(node_disk_io_time_ms{alias=\"$host\"}[$smooth])", 
                             "interval": "", 
                             "intervalFactor": 2, 
                             "legendFormat": "Time: {{ device }}", 
@@ -752,7 +752,7 @@
                             "calculatedInterval": "2m", 
                             "datasourceErrors": {}, 
                             "errors": {}, 
-                            "expr": "rate(node_disk_io_time_weighted{alias=\"$host\"}[5m])", 
+                            "expr": "rate(node_disk_io_time_weighted{alias=\"$host\"}[$smooth])", 
                             "interval": "", 
                             "intervalFactor": 2, 
                             "legendFormat": "Time Weighted : {{ device }}", 
@@ -790,6 +790,58 @@
     "tags": ["Percona", "OS"], 
     "templating": {
         "list": [
+
+		      {
+		        "allFormat": "glob",
+		        "current": {
+		          "tags": [],
+		          "text": "1m",
+		          "value": "1m"
+		        },
+		        "datasource": null,
+		        "includeAll": false,
+		        "multi": false,
+		        "multiFormat": "glob",
+		        "name": "smooth",
+		        "options": [
+		          {
+		            "selected": false,
+		            "text": "10s",
+		            "value": "10s"
+		          },
+		          {
+		            "selected": false,
+		            "text": "30s",
+		            "value": "30s"
+		          },
+		          {
+		            "selected": true,
+		            "text": "1m",
+		            "value": "1m"
+		          },
+		          {
+		            "selected": false,
+		            "text": "5m",
+		            "value": "5m"
+		          },
+		          {
+		            "selected": false,
+		            "text": "15m",
+		            "value": "15m"
+		          },
+		          {
+		            "selected": false,
+		            "text": "1h",
+		            "value": "1h"
+		          }
+
+		        ],
+		        "query": "10s, 30s, 1m, 5m, 15m, 1h",
+		        "refresh": false,
+		        "type": "custom"
+		      },
+
+
             {
                 "allFormat": "glob", 
                 "current": {
