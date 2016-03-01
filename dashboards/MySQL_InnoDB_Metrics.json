@@ -248,7 +248,7 @@
                             "calculatedInterval": "2m", 
                             "datasourceErrors": {}, 
                             "errors": {}, 
-                            "expr": "rate(mysql_global_status_innodb_max_trx_id{alias=\"$host\"}[5m])", 
+                            "expr": "rate(mysql_global_status_innodb_max_trx_id{alias=\"$host\"}[$smooth])", 
                             "interval": "", 
                             "intervalFactor": 2, 
                             "legendFormat": "InnoDB Transactions", 
@@ -468,7 +468,7 @@
                             "calculatedInterval": "2m", 
                             "datasourceErrors": {}, 
                             "errors": {}, 
-                            "expr": "rate(mysql_global_status_innodb_pages_created{alias=\"$host\"}[5m])", 
+                            "expr": "rate(mysql_global_status_innodb_pages_created{alias=\"$host\"}[$smooth])", 
                             "interval": "", 
                             "intervalFactor": 2, 
                             "legendFormat": "Pages Created", 
@@ -481,7 +481,7 @@
                             "calculatedInterval": "2m", 
                             "datasourceErrors": {}, 
                             "errors": {}, 
-                            "expr": "rate(mysql_global_status_innodb_pages_read{alias=\"$host\"}[5m])", 
+                            "expr": "rate(mysql_global_status_innodb_pages_read{alias=\"$host\"}[$smooth])", 
                             "interval": "", 
                             "intervalFactor": 2, 
                             "legendFormat": "Pages Read", 
@@ -494,7 +494,7 @@
                             "calculatedInterval": "2m", 
                             "datasourceErrors": {}, 
                             "errors": {}, 
-                            "expr": "rate(mysql_global_status_innodb_pages_written{alias=\"$host\"}[5m])", 
+                            "expr": "rate(mysql_global_status_innodb_pages_written{alias=\"$host\"}[$smooth])", 
                             "interval": "", 
                             "intervalFactor": 2, 
                             "legendFormat": "Pages Written", 
@@ -568,7 +568,7 @@
                             "calculatedInterval": "2m", 
                             "datasourceErrors": {}, 
                             "errors": {}, 
-                            "expr": "rate(mysql_global_status_innodb_buffer_pool_read_requests{alias=\"$host\"}[5m])", 
+                            "expr": "rate(mysql_global_status_innodb_buffer_pool_read_requests{alias=\"$host\"}[$smooth])", 
                             "interval": "", 
                             "intervalFactor": 2, 
                             "legendFormat": "Read Requests", 
@@ -581,7 +581,7 @@
                             "calculatedInterval": "2m", 
                             "datasourceErrors": {}, 
                             "errors": {}, 
-                            "expr": "rate(mysql_global_status_innodb_buffer_pool_write_requests{alias=\"$host\"}[5m])", 
+                            "expr": "rate(mysql_global_status_innodb_buffer_pool_write_requests{alias=\"$host\"}[$smooth])", 
                             "interval": "", 
                             "intervalFactor": 2, 
                             "legendFormat": "Write Requests", 
@@ -655,7 +655,7 @@
                             "calculatedInterval": "2m", 
                             "datasourceErrors": {}, 
                             "errors": {}, 
-                            "expr": "rate(mysql_global_status_innodb_data_reads{alias=\"$host\"}[5m])", 
+                            "expr": "rate(mysql_global_status_innodb_data_reads{alias=\"$host\"}[$smooth])", 
                             "interval": "", 
                             "intervalFactor": 2, 
                             "legendFormat": "Data Reads", 
@@ -668,7 +668,7 @@
                             "calculatedInterval": "2m", 
                             "datasourceErrors": {}, 
                             "errors": {}, 
-                            "expr": "rate(mysql_global_status_innodb_data_writes{alias=\"$host\"}[5m])", 
+                            "expr": "rate(mysql_global_status_innodb_data_writes{alias=\"$host\"}[$smooth])", 
                             "interval": "", 
                             "intervalFactor": 2, 
                             "legendFormat": "Data Writes", 
@@ -681,7 +681,7 @@
                             "calculatedInterval": "2m", 
                             "datasourceErrors": {}, 
                             "errors": {}, 
-                            "expr": "rate(mysql_global_status_innodb_data_fsyncs{alias=\"$host\"}[5m])", 
+                            "expr": "rate(mysql_global_status_innodb_data_fsyncs{alias=\"$host\"}[$smooth])", 
                             "interval": "", 
                             "intervalFactor": 2, 
                             "legendFormat": "Data Fsyncs", 
@@ -694,7 +694,7 @@
                             "calculatedInterval": "2m", 
                             "datasourceErrors": {}, 
                             "errors": {}, 
-                            "expr": "rate(mysql_global_status_innodb_log_writes{alias=\"$host\"}[5m])", 
+                            "expr": "rate(mysql_global_status_innodb_log_writes{alias=\"$host\"}[$smooth])", 
                             "interval": "", 
                             "intervalFactor": 2, 
                             "legendFormat": "Log Writes", 
@@ -780,8 +780,8 @@
                             "calculatedInterval": "2m", 
                             "datasourceErrors": {}, 
                             "errors": {}, 
-                            "expr": "increase(mysql_global_status_innodb_os_log_written{alias=\"$host\"}[1h])", 
-                            "interval": "1h", 
+                            "expr": "increase(mysql_global_status_innodb_os_log_written{alias=\"$host\"}[$smooth])", 
+                            "interval": "", 
                             "intervalFactor": 1, 
                             "legendFormat": "Data Written", 
                             "metric": "", 
@@ -805,7 +805,7 @@
                     ], 
                     "timeFrom": null, 
                     "timeShift": null, 
-                    "title": "InnoDB Log File Usage Hourly", 
+                    "title": "InnoDB Log File Usage (Hourly)", 
                     "tooltip": {
                         "shared": true, 
                         "value_type": "individual"
@@ -985,7 +985,7 @@
                             "calculatedInterval": "2m", 
                             "datasourceErrors": {}, 
                             "errors": {}, 
-                            "expr": "rate(mysql_global_status_innodb_ibuf_merges{alias=\"$host\"}[5m])", 
+                            "expr": "rate(mysql_global_status_innodb_ibuf_merges{alias=\"$host\"}[$smooth])", 
                             "interval": "", 
                             "intervalFactor": 2, 
                             "legendFormat": "Merges", 
@@ -998,7 +998,7 @@
                             "calculatedInterval": "2m", 
                             "datasourceErrors": {}, 
                             "errors": {}, 
-                            "expr": "rate(mysql_global_status_innodb_ibuf_merged_inserts{alias=\"$host\"}[5m])", 
+                            "expr": "rate(mysql_global_status_innodb_ibuf_merged_inserts{alias=\"$host\"}[$smooth])", 
                             "interval": "", 
                             "intervalFactor": 2, 
                             "legendFormat": "Merged Inserts", 
@@ -1011,7 +1011,7 @@
                             "calculatedInterval": "2m", 
                             "datasourceErrors": {}, 
                             "errors": {}, 
-                            "expr": "rate(mysql_global_status_innodb_ibuf_merged_deletes{alias=\"$host\"}[5m])", 
+                            "expr": "rate(mysql_global_status_innodb_ibuf_merged_deletes{alias=\"$host\"}[$smooth])", 
                             "interval": "", 
                             "intervalFactor": 2, 
                             "legendFormat": "Merged Deletes", 
@@ -1024,7 +1024,7 @@
                             "calculatedInterval": "2m", 
                             "datasourceErrors": {}, 
                             "errors": {}, 
-                            "expr": "rate(mysql_global_status_innodb_ibuf_merged_delete_marks{alias=\"$host\"}[5m])", 
+                            "expr": "rate(mysql_global_status_innodb_ibuf_merged_delete_marks{alias=\"$host\"}[$smooth])", 
                             "interval": "", 
                             "intervalFactor": 2, 
                             "legendFormat": "Merged Delete Marks", 
@@ -1098,7 +1098,7 @@
                             "calculatedInterval": "2m", 
                             "datasourceErrors": {}, 
                             "errors": {}, 
-                            "expr": "rate(mysql_global_status_innodb_row_ops_total{alias=\"$host\"}[5m])", 
+                            "expr": "rate(mysql_global_status_innodb_row_ops_total{alias=\"$host\"}[$smooth])", 
                             "interval": "", 
                             "intervalFactor": 2, 
                             "legendFormat": "Rows {{ operation }}", 
@@ -1134,6 +1134,58 @@
     "tags": ["Percona", "MySQL"], 
     "templating": {
         "list": [
+
+		      {
+		        "allFormat": "glob",
+		        "current": {
+		          "tags": [],
+		          "text": "1m",
+		          "value": "1m"
+		        },
+		        "datasource": null,
+		        "includeAll": false,
+		        "multi": false,
+		        "multiFormat": "glob",
+		        "name": "smooth",
+		        "options": [
+		          {
+		            "selected": false,
+		            "text": "10s",
+		            "value": "10s"
+		          },
+		          {
+		            "selected": false,
+		            "text": "30s",
+		            "value": "30s"
+		          },
+		          {
+		            "selected": true,
+		            "text": "1m",
+		            "value": "1m"
+		          },
+		          {
+		            "selected": false,
+		            "text": "5m",
+		            "value": "5m"
+		          },
+		          {
+		            "selected": false,
+		            "text": "15m",
+		            "value": "15m"
+		          },
+		          {
+		            "selected": false,
+		            "text": "1h",
+		            "value": "1h"
+		          }
+
+		        ],
+		        "query": "10s, 30s, 1m, 5m, 15m, 1h",
+		        "refresh": false,
+		        "type": "custom"
+		      },
+
+
             {
                 "allFormat": "glob", 
                 "current": {
