@@ -219,6 +219,7 @@
                     "valueMaps": [], 
                     "valueName": "current"
                 }, 
+
                 {
                     "aliasColors": {}, 
                     "bars": false, 
@@ -328,6 +329,8 @@
                         "short"
                     ]
                 }, 
+
+
                 {
                     "aliasColors": {}, 
                     "bars": false, 
@@ -403,7 +406,9 @@
                             "prometheusLink": "/api/datasources/proxy/1/graph#%5B%7B%22expr%22%3A%22mysql_global_status_threads_cached%7Balias%3D%5C%22%24host%5C%22%7D%22%2C%22range_input%22%3A%2243200s%22%2C%22end_input%22%3A%222015-8-27%208%3A18%22%2C%22step_input%22%3A%22%22%2C%22stacked%22%3Afalse%2C%22tab%22%3A0%7D%5D", 
                             "refId": "C", 
                             "step": 120
-                        }, 
+                        },
+
+
                         {
                             "calculatedInterval": "2m", 
                             "datasourceErrors": {}, 
@@ -433,6 +438,190 @@
                         "short"
                     ]
                 }, 
+
+				{
+				  "aliasColors": {},
+				  "bars": false,
+				  "datasource": null,
+				  "decimals": null,
+				  "editable": true,
+				  "error": false,
+				  "fill": 6,
+				  "grid": {
+				    "leftLogBase": 1,
+				    "leftMax": null,
+				    "leftMin": null,
+				    "rightLogBase": 1,
+				    "rightMax": null,
+				    "rightMin": null,
+				    "threshold1": null,
+				    "threshold1Color": "rgba(216, 200, 27, 0.27)",
+				    "threshold2": null,
+				    "threshold2Color": "rgba(234, 112, 112, 0.22)"
+				  },
+				  "id": 47,
+				  "legend": {
+				    "alignAsTable": true,
+				    "avg": false,
+				    "current": true,
+				    "max": true,
+				    "min": false,
+				    "rightSide": false,
+				    "show": true,
+				    "total": false,
+				    "values": true
+				  },
+				  "lines": true,
+				  "linewidth": 2,
+				  "links": [],
+				  "nullPointMode": "null",
+				  "percentage": false,
+				  "pointradius": 5,
+				  "points": false,
+				  "renderer": "flot",
+				  "seriesOverrides": [],
+				  "span": 6,
+				  "stack": false,
+				  "steppedLine": true,
+				  "targets": [
+				    {
+				      "calculatedInterval": "2m",
+				      "datasourceErrors": {},
+				      "errors": {},
+				      "expr": "delta(mysql_global_status_aborted_connects{alias=\"$host\"}[$smooth]) ",
+				      "interval": "",
+				      "intervalFactor": 2,
+				      "legendFormat": "Aborted Connects",
+				      "metric": "",
+				      "prometheusLink": "/api/datasources/proxy/1/graph#%5B%7B%22expr%22%3A%22rate(mysql_global_status_bytes_received%7Balias%3D%5C%22%24host%5C%22%7D%5B5m%5D)%22%2C%22range_input%22%3A%2243200s%22%2C%22end_input%22%3A%222015-9-18%2015%3A34%22%2C%22step_input%22%3A%22%22%2C%22stacked%22%3Atrue%2C%22tab%22%3A0%7D%5D",
+				      "refId": "A",
+				      "step": 60
+				    },
+				    {
+				      "calculatedInterval": "2m",
+				      "datasourceErrors": {},
+				      "errors": {},
+				      "expr": "delta(mysql_global_status_aborted_clients{alias=\"$host\"}[$smooth]) ",
+				      "interval": "",
+				      "intervalFactor": 2,
+				      "legendFormat": "Aborted clients",
+				      "metric": "",
+				      "prometheusLink": "/api/datasources/proxy/1/graph#%5B%7B%22expr%22%3A%22-rate(mysql_global_status_bytes_sent%7Balias%3D%5C%22%24host%5C%22%7D%5B5m%5D)%22%2C%22range_input%22%3A%2243200s%22%2C%22end_input%22%3A%222015-9-18%2015%3A34%22%2C%22step_input%22%3A%22%22%2C%22stacked%22%3Atrue%2C%22tab%22%3A0%7D%5D",
+				      "refId": "B",
+				      "step": 60
+				    }
+				  ],
+				  "timeFrom": null,
+				  "timeShift": null,
+				  "title": "Aborted Connection / clients",
+				  "tooltip": {
+				    "shared": true,
+				    "value_type": "cumulative"
+				  },
+				  "type": "graph",
+				  "x-axis": true,
+				  "y-axis": true,
+				  "y_formats": [
+				    "short",
+				    "none"
+				  ]
+				},
+
+				{
+				  "aliasColors": {},
+				  "bars": false,
+				  "datasource": null,
+				  "decimals": null,
+				  "editable": true,
+				  "error": false,
+				  "fill": 6,
+				  "grid": {
+				    "leftLogBase": 1,
+				    "leftMax": null,
+				    "leftMin": null,
+				    "rightLogBase": 1,
+				    "rightMax": null,
+				    "rightMin": null,
+				    "threshold1": null,
+				    "threshold1Color": "rgba(216, 200, 27, 0.27)",
+				    "threshold2": null,
+				    "threshold2Color": "rgba(234, 112, 112, 0.22)"
+				  },
+				  "id": 48,
+				  "legend": {
+				    "alignAsTable": true,
+				    "avg": false,
+				    "current": true,
+				    "max": true,
+				    "min": false,
+				    "rightSide": false,
+				    "show": true,
+				    "total": false,
+				    "values": true
+				  },
+				  "lines": true,
+				  "linewidth": 2,
+				  "links": [],
+				  "nullPointMode": "null",
+				  "percentage": false,
+				  "pointradius": 5,
+				  "points": false,
+				  "renderer": "flot",
+				  "seriesOverrides": [
+				    {
+				      "alias": "Long query time",
+				      "lines": false
+				    }
+				  ],
+				  "span": 6,
+				  "stack": false,
+				  "steppedLine": true,
+				  "targets": [
+				    {
+				      "calculatedInterval": "2m",
+				      "datasourceErrors": {},
+				      "errors": {},
+				      "expr": "delta(mysql_global_status_slow_queries{alias=\"$host\"}[$smooth])",
+				      "interval": "",
+				      "intervalFactor": 2,
+				      "legendFormat": "Slow query per $smooth",
+				      "metric": "",
+				      "prometheusLink": "/api/datasources/proxy/1/graph#%5B%7B%22expr%22%3A%22rate(mysql_global_status_bytes_received%7Balias%3D%5C%22%24host%5C%22%7D%5B5m%5D)%22%2C%22range_input%22%3A%2243200s%22%2C%22end_input%22%3A%222015-9-18%2015%3A34%22%2C%22step_input%22%3A%22%22%2C%22stacked%22%3Atrue%2C%22tab%22%3A0%7D%5D",
+				      "refId": "A",
+				      "step": 21
+				    },
+				    {
+				      "calculatedInterval": "2m",
+				      "datasourceErrors": {},
+				      "errors": {},
+				      "expr": "mysql_global_variables_long_query_time{alias=\"$host\"}",
+				      "interval": "",
+				      "intervalFactor": 2,
+				      "legendFormat": "Long query time",
+				      "metric": "mysql_global_variables_long_query_time",
+				      "prometheusLink": "/api/datasources/proxy/1/graph#%5B%7B%22expr%22%3A%22-rate(mysql_global_status_bytes_sent%7Balias%3D%5C%22%24host%5C%22%7D%5B5m%5D)%22%2C%22range_input%22%3A%2243200s%22%2C%22end_input%22%3A%222015-9-18%2015%3A34%22%2C%22step_input%22%3A%22%22%2C%22stacked%22%3Atrue%2C%22tab%22%3A0%7D%5D",
+				      "refId": "B",
+				      "step": 21,
+				      "hide": false
+				    }
+				  ],
+				  "timeFrom": null,
+				  "timeShift": null,
+				  "title": "Slow query",
+				  "tooltip": {
+				    "shared": true,
+				    "value_type": "individual"
+				  },
+				  "type": "graph",
+				  "x-axis": true,
+				  "y-axis": true,
+				  "y_formats": [
+				    "short",
+				    "none"
+				  ]
+				},
+
+
                 {
                     "aliasColors": {}, 
                     "bars": false, 
