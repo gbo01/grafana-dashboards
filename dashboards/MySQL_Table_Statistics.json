@@ -611,7 +611,7 @@
     "schemaVersion": 8, 
     "sharedCrosshair": false, 
     "style": "dark", 
-    "tags": [], 
+    "tags": ["Percona", "MySQL"], 
     "templating": {
         "list": [
             {
