@@ -282,7 +282,7 @@
                             "calculatedInterval": "2s", 
                             "datasourceErrors": {}, 
                             "errors": {}, 
-                            "expr": "sum(rate(node_cpu{alias=\"$host\"}[5m])) by (mode) * 100 / count_scalar(node_cpu{mode=\"user\", alias=\"$host\"})", 
+                            "expr": "sum(rate(node_cpu{alias=\"$host\"}[$smooth])) by (mode) * 100 / count_scalar(node_cpu{mode=\"user\", alias=\"$host\"})", 
                             "interval": "", 
                             "intervalFactor": 2, 
                             "legendFormat": "{{ mode }}", 
@@ -821,7 +821,7 @@
                             "calculatedInterval": "2m", 
                             "datasourceErrors": {}, 
                             "errors": {}, 
-                            "expr": "rate(node_forks{alias=\"$host\"}[5m])", 
+                            "expr": "rate(node_forks{alias=\"$host\"}[$smooth])", 
                             "interval": "", 
                             "intervalFactor": 2, 
                             "legendFormat": "Forks", 
@@ -900,7 +900,7 @@
                             "calculatedInterval": "2s", 
                             "datasourceErrors": {}, 
                             "errors": {}, 
-                            "expr": "rate(node_network_receive_bytes{alias=\"$host\", device!=\"lo\"}[5m])", 
+                            "expr": "rate(node_network_receive_bytes{alias=\"$host\", device!=\"lo\"}[$smooth])", 
                             "interval": "", 
                             "intervalFactor": 2, 
                             "legendFormat": "Inbound: {{ device }}", 
@@ -914,7 +914,7 @@
                             "calculatedInterval": "2s", 
                             "datasourceErrors": {}, 
                             "errors": {}, 
-                            "expr": "rate(node_network_transmit_bytes{alias=\"$host\", device!=\"lo\"}[5m])", 
+                            "expr": "rate(node_network_transmit_bytes{alias=\"$host\", device!=\"lo\"}[$smooth])", 
                             "interval": "", 
                             "intervalFactor": 2, 
                             "legendFormat": "Outbound: {{ device }}", 
@@ -1044,6 +1044,57 @@
     "tags": ["Percona", "OS"], 
     "templating": {
         "list": [
+
+		      {
+		        "allFormat": "glob",
+		        "current": {
+		          "tags": [],
+		          "text": "1m",
+		          "value": "1m"
+		        },
+		        "datasource": null,
+		        "includeAll": false,
+		        "multi": false,
+		        "multiFormat": "glob",
+		        "name": "smooth",
+		        "options": [
+		          {
+		            "selected": false,
+		            "text": "10s",
+		            "value": "10s"
+		          },
+		          {
+		            "selected": false,
+		            "text": "30s",
+		            "value": "30s"
+		          },
+		          {
+		            "selected": true,
+		            "text": "1m",
+		            "value": "1m"
+		          },
+		          {
+		            "selected": false,
+		            "text": "5m",
+		            "value": "5m"
+		          },
+		          {
+		            "selected": false,
+		            "text": "15m",
+		            "value": "15m"
+		          },
+		          {
+		            "selected": false,
+		            "text": "1h",
+		            "value": "1h"
+		          }
+
+		        ],
+		        "query": "10s, 30s, 1m, 5m, 15m, 1h",
+		        "refresh": false,
+		        "type": "custom"
+		      },
+
             {
                 "allFormat": "glob", 
                 "current": {
