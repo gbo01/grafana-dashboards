@@ -102,7 +102,7 @@
                     }, 
                     "targets": [
                         {
-                            "expr": "count_scalar(node_cpu{mode=\"user\", alias=\"$host\"})", 
+                            "expr": "count(node_cpu{mode=\"user\", alias=\"$host\"})", 
                             "intervalFactor": 2, 
                             "refId": "A", 
                             "step": 600
