@@ -1,0 +1,451 @@
+{
+  "id": 14,
+  "title": "MySQL Performancs schema - Locks",
+  "originalTitle": "MySQL Performancs schema - Locks",
+  "tags": ["MySQL", "PS"],
+  "style": "dark",
+  "timezone": "utc",
+  "editable": true,
+  "hideControls": false,
+  "sharedCrosshair": false,
+  "rows": [
+    {
+      "collapse": false,
+      "editable": true,
+      "height": 83.19999694824219,
+      "panels": [
+        {
+          "content": "External locks\n-------------------\nAn external lock corresponds to a lock in the storage engine layer. This is currently implemented by a call to handler::external_lock().\n\nInternal locks\n--------------------\nAn internal lock corresponds to a lock in the SQL layer. This is currently implemented by a call to thr_lock().\n",
+          "editable": true,
+          "error": false,
+          "id": 1,
+          "isNew": true,
+          "links": [],
+          "mode": "markdown",
+          "span": 12,
+          "style": {},
+          "title": "Locks",
+          "type": "text"
+        }
+      ],
+      "title": "Row"
+    },
+    {
+      "collapse": false,
+      "editable": true,
+      "height": 297,
+      "panels": [
+        {
+          "aliasColors": {},
+          "bars": false,
+          "datasource": null,
+          "editable": true,
+          "error": false,
+          "fill": 1,
+          "grid": {
+            "leftLogBase": 1,
+            "leftMax": null,
+            "leftMin": null,
+            "rightLogBase": 1,
+            "rightMax": null,
+            "rightMin": null,
+            "threshold1": null,
+            "threshold1Color": "rgba(216, 200, 27, 0.27)",
+            "threshold2": null,
+            "threshold2Color": "rgba(234, 112, 112, 0.22)"
+          },
+          "id": 2,
+          "isNew": true,
+          "legend": {
+            "avg": false,
+            "current": false,
+            "hideEmpty": true,
+            "hideZero": true,
+            "max": false,
+            "min": false,
+            "show": false,
+            "total": false,
+            "values": false
+          },
+          "lines": true,
+          "linewidth": 2,
+          "links": [],
+          "nullPointMode": "connected",
+          "percentage": false,
+          "pointradius": 5,
+          "points": false,
+          "renderer": "flot",
+          "seriesOverrides": [],
+          "span": 6.052887826921715,
+          "stack": false,
+          "steppedLine": true,
+          "targets": [
+            {
+              "expr": "rate(mysql_perf_schema_sql_lock_waits_seconds_total{alias=\"$host\"}[$smooth]) > 0 ",
+              "interval": "",
+              "intervalFactor": 2,
+              "legendFormat": "{{schema}} | {{name}} | {{operation}}",
+              "refId": "A",
+              "step": 11
+            }
+          ],
+          "timeFrom": null,
+          "timeShift": null,
+          "title": "Internal (SQL) lock - time",
+          "tooltip": {
+            "shared": false,
+            "value_type": "cumulative"
+          },
+          "type": "graph",
+          "x-axis": true,
+          "y-axis": true,
+          "y_formats": [
+            "s",
+            "short"
+          ]
+        },
+        {
+          "aliasColors": {},
+          "bars": false,
+          "datasource": null,
+          "editable": true,
+          "error": false,
+          "fill": 1,
+          "grid": {
+            "leftLogBase": 1,
+            "leftMax": null,
+            "leftMin": null,
+            "rightLogBase": 1,
+            "rightMax": null,
+            "rightMin": null,
+            "threshold1": null,
+            "threshold1Color": "rgba(216, 200, 27, 0.27)",
+            "threshold2": null,
+            "threshold2Color": "rgba(234, 112, 112, 0.22)"
+          },
+          "id": 4,
+          "isNew": true,
+          "legend": {
+            "avg": false,
+            "current": false,
+            "hideEmpty": true,
+            "hideZero": true,
+            "max": false,
+            "min": false,
+            "show": false,
+            "total": false,
+            "values": false
+          },
+          "lines": true,
+          "linewidth": 2,
+          "links": [],
+          "nullPointMode": "connected",
+          "percentage": false,
+          "pointradius": 5,
+          "points": false,
+          "renderer": "flot",
+          "seriesOverrides": [],
+          "span": 5.947112173078285,
+          "stack": false,
+          "steppedLine": true,
+          "targets": [
+            {
+              "expr": "rate(mysql_perf_schema_sql_lock_waits_total{alias=\"$host\"}[$smooth]) > 0",
+              "intervalFactor": 2,
+              "legendFormat": "{{schema}} | {{name}} | {{operation}}",
+              "metric": "",
+              "refId": "A",
+              "step": 11
+            }
+          ],
+          "timeFrom": null,
+          "timeShift": null,
+          "title": "Internal (SQL) lock - total",
+          "tooltip": {
+            "shared": false,
+            "value_type": "cumulative"
+          },
+          "type": "graph",
+          "x-axis": true,
+          "y-axis": true,
+          "y_formats": [
+            "short",
+            "short"
+          ]
+        }
+      ],
+      "title": "New row"
+    },
+    {
+      "collapse": false,
+      "editable": true,
+      "height": 296.4000244140625,
+      "panels": [
+        {
+          "aliasColors": {},
+          "bars": false,
+          "datasource": null,
+          "editable": true,
+          "error": false,
+          "fill": 1,
+          "grid": {
+            "leftLogBase": 1,
+            "leftMax": null,
+            "leftMin": null,
+            "rightLogBase": 1,
+            "rightMax": null,
+            "rightMin": null,
+            "threshold1": null,
+            "threshold1Color": "rgba(216, 200, 27, 0.27)",
+            "threshold2": null,
+            "threshold2Color": "rgba(234, 112, 112, 0.22)"
+          },
+          "id": 3,
+          "isNew": true,
+          "legend": {
+            "avg": false,
+            "current": false,
+            "hideEmpty": true,
+            "hideZero": true,
+            "max": false,
+            "min": false,
+            "show": false,
+            "total": false,
+            "values": false
+          },
+          "lines": true,
+          "linewidth": 2,
+          "links": [],
+          "nullPointMode": "connected",
+          "percentage": false,
+          "pointradius": 5,
+          "points": false,
+          "renderer": "flot",
+          "seriesOverrides": [],
+          "span": 6.048183236695939,
+          "stack": false,
+          "steppedLine": true,
+          "targets": [
+            {
+              "expr": "rate(mysql_perf_schema_external_lock_waits_seconds_total{alias=\"$host\"}[$smooth]) > 0",
+              "interval": "",
+              "intervalFactor": 2,
+              "legendFormat": "{{schema}} | {{name}} | {{operation}}",
+              "metric": "",
+              "refId": "A",
+              "step": 11
+            }
+          ],
+          "timeFrom": null,
+          "timeShift": null,
+          "title": "External (Engine)  lock - time",
+          "tooltip": {
+            "shared": false,
+            "value_type": "cumulative"
+          },
+          "type": "graph",
+          "x-axis": true,
+          "y-axis": true,
+          "y_formats": [
+            "s",
+            "short"
+          ]
+        },
+        {
+          "aliasColors": {},
+          "bars": false,
+          "datasource": null,
+          "editable": true,
+          "error": false,
+          "fill": 1,
+          "grid": {
+            "leftLogBase": 1,
+            "leftMax": null,
+            "leftMin": null,
+            "rightLogBase": 1,
+            "rightMax": null,
+            "rightMin": null,
+            "threshold1": null,
+            "threshold1Color": "rgba(216, 200, 27, 0.27)",
+            "threshold2": null,
+            "threshold2Color": "rgba(234, 112, 112, 0.22)"
+          },
+          "id": 5,
+          "isNew": true,
+          "legend": {
+            "avg": false,
+            "current": false,
+            "hideEmpty": true,
+            "hideZero": true,
+            "max": false,
+            "min": false,
+            "show": false,
+            "total": false,
+            "values": false
+          },
+          "lines": true,
+          "linewidth": 2,
+          "links": [],
+          "nullPointMode": "connected",
+          "percentage": false,
+          "pointradius": 5,
+          "points": false,
+          "renderer": "flot",
+          "seriesOverrides": [],
+          "span": 5.951816763304061,
+          "stack": false,
+          "steppedLine": true,
+          "targets": [
+            {
+              "expr": "rate(mysql_perf_schema_external_lock_waits_total{alias=\"$host\"}[$smooth]) > 0",
+              "interval": "",
+              "intervalFactor": 2,
+              "legendFormat": "{{schema}} | {{name}} | {{operation}}",
+              "metric": "",
+              "refId": "A",
+              "step": 11
+            }
+          ],
+          "timeFrom": null,
+          "timeShift": null,
+          "title": "External (Engine)  lock - total",
+          "tooltip": {
+            "shared": false,
+            "value_type": "cumulative"
+          },
+          "type": "graph",
+          "x-axis": true,
+          "y-axis": true,
+          "y_formats": [
+            "short",
+            "short"
+          ]
+        }
+      ],
+      "title": "New row"
+    }
+  ],
+  "time": {
+    "from": "now-2h",
+    "to": "now"
+  },
+  "timepicker": {
+    "now": true,
+    "refresh_intervals": [
+      "5s",
+      "10s",
+      "30s",
+      "1m",
+      "5m",
+      "15m",
+      "30m",
+      "1h",
+      "2h",
+      "1d"
+    ],
+    "time_options": [
+      "5m",
+      "15m",
+      "1h",
+      "6h",
+      "12h",
+      "24h",
+      "2d",
+      "7d",
+      "30d"
+    ]
+  },
+  "templating": {
+        "list": [
+
+		      {
+		        "allFormat": "glob",
+		        "current": {
+		          "tags": [],
+		          "text": "1m",
+		          "value": "1m"
+		        },
+		        "datasource": null,
+		        "includeAll": false,
+		        "multi": false,
+		        "multiFormat": "glob",
+		        "name": "smooth",
+		        "options": [
+		          {
+		            "selected": false,
+		            "text": "10s",
+		            "value": "10s"
+		          },
+		          {
+		            "selected": false,
+		            "text": "30s",
+		            "value": "30s"
+		          },
+		          {
+		            "selected": true,
+		            "text": "1m",
+		            "value": "1m"
+		          },
+		          {
+		            "selected": false,
+		            "text": "5m",
+		            "value": "5m"
+		          },
+		          {
+		            "selected": false,
+		            "text": "15m",
+		            "value": "15m"
+		          },
+		          {
+		            "selected": false,
+		            "text": "1h",
+		            "value": "1h"
+		          }
+
+		        ],
+		        "query": "10s, 30s, 1m, 5m, 15m, 1h",
+		        "refresh": false,
+		        "type": "custom"
+		      },
+
+
+            {
+                "allFormat": "glob", 
+                "current": {
+                    "text": "cdba2", 
+                    "value": "cdba2"
+                }, 
+                "datasource": null, 
+                "includeAll": false, 
+                "label": "Host", 
+                "multi": false, 
+                "multiFormat": "regex values", 
+                "name": "host", 
+                "options": [
+                    {
+                        "selected": false, 
+                        "text": "cdba", 
+                        "value": "cdba"
+                    }, 
+                    {
+                        "selected": true, 
+                        "text": "cdba2", 
+                        "value": "cdba2"
+                    }
+                ], 
+                "query": "label_values(alias)", 
+                "refresh": true, 
+                "refresh_on_load": false, 
+                "regex": "", 
+                "type": "query"
+            }
+        ]
+  },
+  "annotations": {
+    "list": []
+  },
+  "refresh": false,
+  "schemaVersion": 8,
+  "version": 19,
+  "links": []
+}

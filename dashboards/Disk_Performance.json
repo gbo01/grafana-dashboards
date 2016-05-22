@@ -917,8 +917,8 @@
         ], 
         "type": "timepicker"
     }, 
-    "timezone": "browser", 
-    "title": "Disk Performance", 
+    "timezone": "utc", 
+    "title": "OS Disk Performance", 
     "refresh": "30s",
 "version": 5
 }

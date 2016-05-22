@@ -1170,8 +1170,8 @@
         ], 
         "type": "timepicker"
     }, 
-    "timezone": "browser", 
-    "title": "System Overview", 
+    "timezone": "utc", 
+    "title": "OS System Overview", 
     "refresh": "30s",
 "version": 2
 }

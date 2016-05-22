@@ -1,0 +1,852 @@
+{
+  "id": 11,
+  "title": "MySQL Performance schema - Statments",
+  "originalTitle": "MySQL Performance schema - Statments",
+  "tags": ["MySQL", "PS"],
+  "style": "dark",
+  "timezone": "utc",
+  "editable": true,
+  "hideControls": false,
+  "sharedCrosshair": false,
+  "rows": [
+    {
+      "collapse": false,
+      "editable": true,
+      "height": -825.3999938964844,
+      "panels": [],
+      "title": "Row"
+    },
+    {
+      "collapse": false,
+      "editable": true,
+      "height": 300.91668701171875,
+      "panels": [
+        {
+          "aliasColors": {},
+          "bars": false,
+          "datasource": null,
+          "editable": true,
+          "error": false,
+          "fill": 1,
+          "grid": {
+            "leftLogBase": 1,
+            "leftMax": null,
+            "leftMin": null,
+            "rightLogBase": 1,
+            "rightMax": null,
+            "rightMin": null,
+            "threshold1": null,
+            "threshold1Color": "rgba(216, 200, 27, 0.27)",
+            "threshold2": null,
+            "threshold2Color": "rgba(234, 112, 112, 0.22)"
+          },
+          "id": 16,
+          "isNew": true,
+          "legend": {
+            "avg": false,
+            "current": false,
+            "hideEmpty": true,
+            "hideZero": true,
+            "max": false,
+            "min": false,
+            "show": false,
+            "total": false,
+            "values": false
+          },
+          "lines": true,
+          "linewidth": 2,
+          "links": [],
+          "nullPointMode": "connected",
+          "percentage": false,
+          "pointradius": 5,
+          "points": false,
+          "renderer": "flot",
+          "seriesOverrides": [],
+          "span": 5.68999099902963,
+          "stack": false,
+          "steppedLine": true,
+          "targets": [
+            {
+              "expr": "rate(mysql_perf_schema_events_statements_total{alias=\"$host\"}[$smooth]) ",
+              "interval": "1m",
+              "intervalFactor": 2,
+              "legendFormat": "{{digest_text}}",
+              "metric": "",
+              "refId": "A",
+              "step": 120
+            }
+          ],
+          "timeFrom": null,
+          "timeShift": null,
+          "title": "Event statments total",
+          "tooltip": {
+            "shared": false,
+            "value_type": "cumulative"
+          },
+          "type": "graph",
+          "x-axis": true,
+          "y-axis": true,
+          "y_formats": [
+            "short",
+            "short"
+          ]
+        },
+        {
+          "aliasColors": {},
+          "bars": false,
+          "datasource": null,
+          "editable": true,
+          "error": false,
+          "fill": 1,
+          "grid": {
+            "leftLogBase": 1,
+            "leftMax": null,
+            "leftMin": null,
+            "rightLogBase": 1,
+            "rightMax": null,
+            "rightMin": null,
+            "threshold1": null,
+            "threshold1Color": "rgba(216, 200, 27, 0.27)",
+            "threshold2": null,
+            "threshold2Color": "rgba(234, 112, 112, 0.22)"
+          },
+          "id": 28,
+          "isNew": true,
+          "legend": {
+            "avg": false,
+            "current": false,
+            "hideEmpty": true,
+            "hideZero": true,
+            "max": false,
+            "min": false,
+            "show": false,
+            "total": false,
+            "values": false
+          },
+          "lines": true,
+          "linewidth": 2,
+          "links": [],
+          "nullPointMode": "connected",
+          "percentage": false,
+          "pointradius": 5,
+          "points": false,
+          "renderer": "flot",
+          "seriesOverrides": [],
+          "span": 6.184728341177759,
+          "stack": false,
+          "steppedLine": true,
+          "targets": [
+            {
+              "expr": "rate(mysql_perf_schema_events_statements_seconds_total{alias=\"$host\"}[$smooth]) ",
+              "interval": "1m",
+              "intervalFactor": 2,
+              "legendFormat": "{{digest_text}}",
+              "metric": "",
+              "refId": "A",
+              "step": 120
+            }
+          ],
+          "timeFrom": null,
+          "timeShift": null,
+          "title": "Event statments seconds",
+          "tooltip": {
+            "shared": false,
+            "value_type": "cumulative"
+          },
+          "type": "graph",
+          "x-axis": true,
+          "y-axis": true,
+          "y_formats": [
+            "s",
+            "short"
+          ]
+        },
+        {
+          "aliasColors": {},
+          "bars": false,
+          "datasource": null,
+          "editable": true,
+          "error": false,
+          "fill": 1,
+          "grid": {
+            "leftLogBase": 1,
+            "leftMax": null,
+            "leftMin": null,
+            "rightLogBase": 1,
+            "rightMax": null,
+            "rightMin": null,
+            "threshold1": null,
+            "threshold1Color": "rgba(216, 200, 27, 0.27)",
+            "threshold2": null,
+            "threshold2Color": "rgba(234, 112, 112, 0.22)"
+          },
+          "id": 17,
+          "isNew": true,
+          "legend": {
+            "avg": false,
+            "current": false,
+            "hideEmpty": true,
+            "hideZero": true,
+            "max": false,
+            "min": false,
+            "show": false,
+            "total": false,
+            "values": false
+          },
+          "lines": true,
+          "linewidth": 2,
+          "links": [],
+          "nullPointMode": "connected",
+          "percentage": false,
+          "pointradius": 5,
+          "points": false,
+          "renderer": "flot",
+          "seriesOverrides": [],
+          "span": 5.6844035679723595,
+          "stack": false,
+          "steppedLine": true,
+          "targets": [
+            {
+              "expr": "rate(mysql_perf_schema_events_statements_tmp_tables_total{alias=\"$host\"}[$smooth])",
+              "interval": "1m",
+              "intervalFactor": 2,
+              "legendFormat": "{{digest_text}}",
+              "metric": "",
+              "refId": "A",
+              "step": 120
+            }
+          ],
+          "timeFrom": null,
+          "timeShift": null,
+          "title": "Event statments tmp tables",
+          "tooltip": {
+            "shared": false,
+            "value_type": "cumulative"
+          },
+          "type": "graph",
+          "x-axis": true,
+          "y-axis": true,
+          "y_formats": [
+            "short",
+            "short"
+          ]
+        },
+        {
+          "aliasColors": {},
+          "bars": false,
+          "datasource": null,
+          "editable": true,
+          "error": false,
+          "fill": 1,
+          "grid": {
+            "leftLogBase": 1,
+            "leftMax": null,
+            "leftMin": null,
+            "rightLogBase": 1,
+            "rightMax": null,
+            "rightMin": null,
+            "threshold1": null,
+            "threshold1Color": "rgba(216, 200, 27, 0.27)",
+            "threshold2": null,
+            "threshold2Color": "rgba(234, 112, 112, 0.22)"
+          },
+          "id": 20,
+          "isNew": true,
+          "legend": {
+            "avg": false,
+            "current": false,
+            "hideEmpty": true,
+            "hideZero": true,
+            "max": false,
+            "min": false,
+            "show": false,
+            "total": false,
+            "values": false
+          },
+          "lines": true,
+          "linewidth": 2,
+          "links": [],
+          "nullPointMode": "connected",
+          "percentage": false,
+          "pointradius": 5,
+          "points": false,
+          "renderer": "flot",
+          "seriesOverrides": [],
+          "span": 6.1213311350700526,
+          "stack": false,
+          "steppedLine": true,
+          "targets": [
+            {
+              "expr": "rate(mysql_perf_schema_events_statements_tmp_disk_tables_total{alias=\"$host\"}[$smooth])",
+              "interval": "1m",
+              "intervalFactor": 2,
+              "legendFormat": "{{digest_text}}",
+              "metric": "",
+              "refId": "A",
+              "step": 120
+            }
+          ],
+          "timeFrom": null,
+          "timeShift": null,
+          "title": "Event statments tmp DISK tables",
+          "tooltip": {
+            "shared": false,
+            "value_type": "cumulative"
+          },
+          "type": "graph",
+          "x-axis": true,
+          "y-axis": true,
+          "y_formats": [
+            "short",
+            "short"
+          ]
+        },
+        {
+          "aliasColors": {},
+          "bars": false,
+          "datasource": null,
+          "editable": true,
+          "error": false,
+          "fill": 1,
+          "grid": {
+            "leftLogBase": 1,
+            "leftMax": null,
+            "leftMin": null,
+            "rightLogBase": 1,
+            "rightMax": null,
+            "rightMin": null,
+            "threshold1": null,
+            "threshold1Color": "rgba(216, 200, 27, 0.27)",
+            "threshold2": null,
+            "threshold2Color": "rgba(234, 112, 112, 0.22)"
+          },
+          "id": 22,
+          "isNew": true,
+          "legend": {
+            "avg": false,
+            "current": false,
+            "hideEmpty": true,
+            "hideZero": true,
+            "max": false,
+            "min": false,
+            "show": false,
+            "total": false,
+            "values": false
+          },
+          "lines": true,
+          "linewidth": 2,
+          "links": [],
+          "nullPointMode": "connected",
+          "percentage": false,
+          "pointradius": 5,
+          "points": false,
+          "renderer": "flot",
+          "seriesOverrides": [],
+          "span": 5.696392020577933,
+          "stack": false,
+          "steppedLine": true,
+          "targets": [
+            {
+              "expr": "rate(mysql_perf_schema_events_statements_sort_merge_passes_total{alias=\"$host\"}[$smooth])",
+              "interval": "1m",
+              "intervalFactor": 2,
+              "legendFormat": "{{schema}} | {{digest_text}}",
+              "metric": "",
+              "refId": "A",
+              "step": 120
+            }
+          ],
+          "timeFrom": null,
+          "timeShift": null,
+          "title": "Event statments sort merge passes",
+          "tooltip": {
+            "shared": false,
+            "value_type": "cumulative"
+          },
+          "type": "graph",
+          "x-axis": true,
+          "y-axis": true,
+          "y_formats": [
+            "short",
+            "short"
+          ]
+        },
+        {
+          "aliasColors": {},
+          "bars": false,
+          "datasource": null,
+          "editable": true,
+          "error": false,
+          "fill": 1,
+          "grid": {
+            "leftLogBase": 1,
+            "leftMax": null,
+            "leftMin": null,
+            "rightLogBase": 1,
+            "rightMax": null,
+            "rightMin": null,
+            "threshold1": null,
+            "threshold1Color": "rgba(216, 200, 27, 0.27)",
+            "threshold2": null,
+            "threshold2Color": "rgba(234, 112, 112, 0.22)"
+          },
+          "id": 21,
+          "isNew": true,
+          "legend": {
+            "avg": false,
+            "current": false,
+            "hideEmpty": true,
+            "hideZero": true,
+            "max": false,
+            "min": false,
+            "show": false,
+            "total": false,
+            "values": false
+          },
+          "lines": true,
+          "linewidth": 2,
+          "links": [],
+          "nullPointMode": "connected",
+          "percentage": false,
+          "pointradius": 5,
+          "points": false,
+          "renderer": "flot",
+          "seriesOverrides": [],
+          "span": 6.103817658165499,
+          "stack": false,
+          "steppedLine": true,
+          "targets": [
+            {
+              "expr": "rate(mysql_perf_schema_events_statements_sort_rows_total{alias=\"$host\"}[$smooth])",
+              "interval": "1m",
+              "intervalFactor": 2,
+              "legendFormat": "{{schema}} | {{digest_text}}",
+              "metric": "",
+              "refId": "A",
+              "step": 120
+            }
+          ],
+          "timeFrom": null,
+          "timeShift": null,
+          "title": "Event statments sort rows",
+          "tooltip": {
+            "shared": false,
+            "value_type": "cumulative"
+          },
+          "type": "graph",
+          "x-axis": true,
+          "y-axis": true,
+          "y_formats": [
+            "short",
+            "short"
+          ]
+        },
+        {
+          "aliasColors": {},
+          "bars": false,
+          "datasource": null,
+          "editable": true,
+          "error": false,
+          "fill": 1,
+          "grid": {
+            "leftLogBase": 1,
+            "leftMax": null,
+            "leftMin": null,
+            "rightLogBase": 1,
+            "rightMax": null,
+            "rightMin": null,
+            "threshold1": null,
+            "threshold1Color": "rgba(216, 200, 27, 0.27)",
+            "threshold2": null,
+            "threshold2Color": "rgba(234, 112, 112, 0.22)"
+          },
+          "id": 24,
+          "isNew": true,
+          "leftYAxisLabel": "",
+          "legend": {
+            "avg": false,
+            "current": true,
+            "hideEmpty": true,
+            "hideZero": true,
+            "max": false,
+            "min": false,
+            "show": false,
+            "total": false,
+            "values": true
+          },
+          "lines": true,
+          "linewidth": 2,
+          "links": [],
+          "nullPointMode": "connected",
+          "percentage": false,
+          "pointradius": 5,
+          "points": false,
+          "renderer": "flot",
+          "seriesOverrides": [],
+          "span": 12,
+          "stack": false,
+          "steppedLine": true,
+          "targets": [
+            {
+              "expr": "rate(mysql_perf_schema_events_statements_rows_examined_total{alias=\"$host\"}[$smooth])",
+              "interval": "1m",
+              "intervalFactor": 2,
+              "legendFormat": "{{schema}} | {{digest_text}}",
+              "metric": "",
+              "refId": "A",
+              "step": 120
+            }
+          ],
+          "timeFrom": null,
+          "timeShift": null,
+          "title": "Event statments row examined total",
+          "tooltip": {
+            "shared": false,
+            "value_type": "cumulative"
+          },
+          "type": "graph",
+          "x-axis": true,
+          "y-axis": true,
+          "y_formats": [
+            "short",
+            "short"
+          ]
+        },
+        {
+          "aliasColors": {},
+          "bars": false,
+          "datasource": null,
+          "editable": true,
+          "error": false,
+          "fill": 1,
+          "grid": {
+            "leftLogBase": 1,
+            "leftMax": null,
+            "leftMin": null,
+            "rightLogBase": 1,
+            "rightMax": null,
+            "rightMin": null,
+            "threshold1": null,
+            "threshold1Color": "rgba(216, 200, 27, 0.27)",
+            "threshold2": null,
+            "threshold2Color": "rgba(234, 112, 112, 0.22)"
+          },
+          "id": 25,
+          "isNew": true,
+          "legend": {
+            "avg": false,
+            "current": false,
+            "hideEmpty": true,
+            "hideZero": true,
+            "max": false,
+            "min": false,
+            "show": false,
+            "total": false,
+            "values": false
+          },
+          "lines": true,
+          "linewidth": 2,
+          "links": [],
+          "nullPointMode": "connected",
+          "percentage": false,
+          "pointradius": 5,
+          "points": false,
+          "renderer": "flot",
+          "seriesOverrides": [],
+          "span": 12,
+          "stack": false,
+          "steppedLine": true,
+          "targets": [
+            {
+              "expr": "rate(mysql_perf_schema_events_statements_rows_affected_total{alias=\"$host\"}[$smooth])",
+              "interval": "1m",
+              "intervalFactor": 2,
+              "legendFormat": "{{schema}} | {{digest_text}}",
+              "metric": "",
+              "refId": "A",
+              "step": 120
+            }
+          ],
+          "timeFrom": null,
+          "timeShift": null,
+          "title": "Event statments row affected total",
+          "tooltip": {
+            "shared": false,
+            "value_type": "cumulative"
+          },
+          "type": "graph",
+          "x-axis": true,
+          "y-axis": true,
+          "y_formats": [
+            "short",
+            "short"
+          ]
+        },
+        {
+          "aliasColors": {},
+          "bars": false,
+          "datasource": null,
+          "editable": true,
+          "error": false,
+          "fill": 1,
+          "grid": {
+            "leftLogBase": 1,
+            "leftMax": null,
+            "leftMin": null,
+            "rightLogBase": 1,
+            "rightMax": null,
+            "rightMin": null,
+            "threshold1": null,
+            "threshold1Color": "rgba(216, 200, 27, 0.27)",
+            "threshold2": null,
+            "threshold2Color": "rgba(234, 112, 112, 0.22)"
+          },
+          "id": 23,
+          "isNew": true,
+          "legend": {
+            "avg": false,
+            "current": false,
+            "hideEmpty": true,
+            "hideZero": true,
+            "max": false,
+            "min": false,
+            "show": false,
+            "total": false,
+            "values": false
+          },
+          "lines": true,
+          "linewidth": 2,
+          "links": [],
+          "nullPointMode": "connected",
+          "percentage": false,
+          "pointradius": 5,
+          "points": false,
+          "renderer": "flot",
+          "seriesOverrides": [],
+          "span": 12,
+          "stack": false,
+          "steppedLine": true,
+          "targets": [
+            {
+              "expr": "topk(5, rate(mysql_perf_schema_events_statements_rows_sent_total{alias=\"$host\"}[$smooth]))",
+              "interval": "1m",
+              "intervalFactor": 2,
+              "legendFormat": "{{schema}} | {{digest_text}}",
+              "metric": "",
+              "refId": "A",
+              "step": 120
+            }
+          ],
+          "timeFrom": null,
+          "timeShift": null,
+          "title": "Event statments row sent total",
+          "tooltip": {
+            "shared": false,
+            "value_type": "cumulative"
+          },
+          "type": "graph",
+          "x-axis": true,
+          "y-axis": true,
+          "y_formats": [
+            "short",
+            "short"
+          ]
+        },
+        {
+          "aliasColors": {},
+          "bars": false,
+          "datasource": null,
+          "editable": true,
+          "error": false,
+          "fill": 1,
+          "grid": {
+            "leftLogBase": 1,
+            "leftMax": null,
+            "leftMin": null,
+            "rightLogBase": 1,
+            "rightMax": null,
+            "rightMin": null,
+            "threshold1": null,
+            "threshold1Color": "rgba(216, 200, 27, 0.27)",
+            "threshold2": null,
+            "threshold2Color": "rgba(234, 112, 112, 0.22)"
+          },
+          "id": 26,
+          "isNew": true,
+          "legend": {
+            "avg": false,
+            "current": false,
+            "hideEmpty": true,
+            "hideZero": true,
+            "max": false,
+            "min": false,
+            "show": false,
+            "total": false,
+            "values": false
+          },
+          "lines": true,
+          "linewidth": 2,
+          "links": [],
+          "nullPointMode": "connected",
+          "percentage": false,
+          "pointradius": 5,
+          "points": false,
+          "renderer": "flot",
+          "seriesOverrides": [],
+          "span": 12,
+          "stack": false,
+          "steppedLine": true,
+          "targets": [
+            {
+              "expr": "rate(mysql_perf_schema_events_statements_no_index_used_total{alias=\"$host\"}[$smooth])",
+              "interval": "1m",
+              "intervalFactor": 2,
+              "legendFormat": "{{schema}} | {{digest_text}}",
+              "metric": "",
+              "refId": "A",
+              "step": 120
+            }
+          ],
+          "timeFrom": null,
+          "timeShift": null,
+          "title": "Event statments no index used total",
+          "tooltip": {
+            "shared": false,
+            "value_type": "cumulative"
+          },
+          "type": "graph",
+          "x-axis": true,
+          "y-axis": true,
+          "y_formats": [
+            "short",
+            "short"
+          ]
+        }
+      ],
+      "title": "New row"
+    }
+  ],
+  "time": {
+    "from": "now-3h",
+    "to": "now"
+  },
+  "timepicker": {
+    "now": true,
+    "refresh_intervals": [
+      "5s",
+      "10s",
+      "30s",
+      "1m",
+      "5m",
+      "15m",
+      "30m",
+      "1h",
+      "2h",
+      "1d"
+    ],
+    "time_options": [
+      "5m",
+      "15m",
+      "1h",
+      "6h",
+      "12h",
+      "24h",
+      "2d",
+      "7d",
+      "30d"
+    ]
+  },
+  "templating": {
+        "list": [
+
+		      {
+		        "allFormat": "glob",
+		        "current": {
+		          "tags": [],
+		          "text": "1m",
+		          "value": "1m"
+		        },
+		        "datasource": null,
+		        "includeAll": false,
+		        "multi": false,
+		        "multiFormat": "glob",
+		        "name": "smooth",
+		        "options": [
+		          {
+		            "selected": false,
+		            "text": "10s",
+		            "value": "10s"
+		          },
+		          {
+		            "selected": false,
+		            "text": "30s",
+		            "value": "30s"
+		          },
+		          {
+		            "selected": true,
+		            "text": "1m",
+		            "value": "1m"
+		          },
+		          {
+		            "selected": false,
+		            "text": "5m",
+		            "value": "5m"
+		          },
+		          {
+		            "selected": false,
+		            "text": "15m",
+		            "value": "15m"
+		          },
+		          {
+		            "selected": false,
+		            "text": "1h",
+		            "value": "1h"
+		          }
+
+		        ],
+		        "query": "10s, 30s, 1m, 5m, 15m, 1h",
+		        "refresh": false,
+		        "type": "custom"
+		      },
+
+
+            {
+                "allFormat": "glob", 
+                "current": {
+                    "text": "cdba2", 
+                    "value": "cdba2"
+                }, 
+                "datasource": null, 
+                "includeAll": false, 
+                "label": "Host", 
+                "multi": false, 
+                "multiFormat": "regex values", 
+                "name": "host", 
+                "options": [
+                    {
+                        "selected": false, 
+                        "text": "cdba", 
+                        "value": "cdba"
+                    }, 
+                    {
+                        "selected": true, 
+                        "text": "cdba2", 
+                        "value": "cdba2"
+                    }
+                ], 
+                "query": "label_values(alias)", 
+                "refresh": true, 
+                "refresh_on_load": false, 
+                "regex": "", 
+                "type": "query"
+            }
+        ]
+  },
+  "annotations": {
+    "list": []
+  },
+  "refresh": false,
+  "schemaVersion": 8,
+  "version": 86,
+  "links": []
+}
